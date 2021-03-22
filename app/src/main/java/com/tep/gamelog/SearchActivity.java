@@ -64,7 +64,7 @@ public class SearchActivity extends AppCompatActivity {
 
                 GameService service = RetrofitConfig.getRetrofitInstance().create(GameService.class);
                 Call<List<Game>> call = service.listGames();
-                call.enqueue(new Callback<List<Game>>() {
+                call.enqueue(new Callback<List<Game>>(/*ADD QUERY PARAMETERS*/) {
                 //Call<List<Game>> call = new RetrofitConfig().getGameService().listGames();
                 //call.enqueue(new Callback<List<Game>>() {
                     @Override
@@ -84,9 +84,9 @@ public class SearchActivity extends AppCompatActivity {
                             parametros.putInt("lançamento", gamelist.get(0).getRelease());
 
                             resultText.setText("Teste " + parametros +
-                                    "\n" + gamelist.get(3).getId() +
-                                    "\n" + gamelist.get(3).getTitle() +
-                                    "\n" + gamelist.get(3).getRelease());
+                                    "\n" + gamelist.get(0).getId() +
+                                    "\n" + gamelist.get(0).getTitle() +
+                                    "\n" + gamelist.get(0).getRelease());
 
                             //intent.putExtras(parametros);
                             //startActivity(intent);
