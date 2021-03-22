@@ -8,6 +8,6 @@ import com.tep.gamelog.model.Game;
 import java.util.List;
 
 public interface GameService {
-    @GET("/KarinaNeuburger/game-log-app/games")
-    Call<List<Game>> listGames();
+    @GET("/KarinaNeuburger/game-log-app/games?title=")
+    Call<List<Game>> listGames(@Path("title") String title);
 }
