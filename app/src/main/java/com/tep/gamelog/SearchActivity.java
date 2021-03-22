@@ -1,6 +1,6 @@
 package com.tep.gamelog;
 
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,14 +45,21 @@ public class SearchActivity extends AppCompatActivity {
                 ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
                         .hideSoftInputFromWindow(searchText.getWindowToken(), 0);
 
-                final ProgressDialog progressDialog;
-                progressDialog = new ProgressDialog(SearchActivity.this);
-                progressDialog.setMax(100);
-                progressDialog.setMessage("Searching...");
-                progressDialog.setTitle("Game Log API v 1.0");
-                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-
-                progressDialog.show();
+                //final ProgressDialog progressDialog;
+                //progressDialog = new ProgressDialog(SearchActivity.this);
+                //progressDialog.setMax(100);
+                //progressDialog.setMessage("Searching...");
+                //progressDialog.setTitle("Game Log API v 1.0");
+                //progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                //progressDialog.show();
+                
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setCancelable(false); // if you want user to wait for some process to finish,
+                builder.setView(R.layout.layout_loading_dialog);
+                AlertDialog dialog = builder.create();
+                
+                dialog.show(); // to show this dialog
+                
                 Log.d("Teste", "Teste");
 
                 GameService service = RetrofitConfig.getRetrofitInstance().create(GameService.class);
@@ -63,7 +70,8 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {
                         Log.d("onResponse", "Entrou no onResponse");
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
+                        dialog.dismiss(); // to hide this dialog
                         List<Game> gamelist = response.body();
                         Log.d("Teste", "GameList" + gamelist.toString());
                         if (!gamelist.isEmpty()) {
@@ -90,7 +98,8 @@ public class SearchActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<Game>> call, Throwable t) {
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
+                        dialog.dismiss(); // to hide this dialog
                         resultText.setText("Erro ao buscar dados na API");
                         Log.e("GameService   ", "Erro ao buscar dados na API:" + t.getMessage());
                     }
