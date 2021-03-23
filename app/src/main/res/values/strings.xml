@@ -12,4 +12,5 @@
     <string name="signin">Teste</string>
     <string name="cancel">OK</string>
     <string name="SC">SEARCH</string>
+    <string name="ADD">ADD</string>
 </resources>

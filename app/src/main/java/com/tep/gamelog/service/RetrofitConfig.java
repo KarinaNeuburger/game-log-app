@@ -1,9 +1,8 @@
-package com.tep.gamelog.retrofit;
+package com.tep.gamelog.service;
 
 
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
-import com.tep.gamelog.service.GameService;
 
 public class RetrofitConfig {
 
