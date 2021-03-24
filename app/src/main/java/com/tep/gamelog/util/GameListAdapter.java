@@ -19,7 +19,6 @@ import java.util.List;
  * Created by Karina on 02/11/2018.
  */
 /*
-
 public class GameListAdapter extends BaseAdapter {
 
     private Context context;
@@ -44,7 +43,7 @@ public class GameListAdapter extends BaseAdapter {
     public long getItemId(int position) { return position; }
 
     private class ViewHolder {
-        ImageView imageViewCover;
+
         TextView textViewTitle;
     }
 
@@ -58,7 +57,6 @@ public class GameListAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.imageViewCover = row.findViewById(R.id.imageViewCover);
             holder.textViewTitle = row.findViewById(R.id.textViewTitle);
             row.setTag(holder);
 
@@ -69,10 +67,6 @@ public class GameListAdapter extends BaseAdapter {
         FilmSQLite filmSQLite = filmList.get(position);
 
         holder.textViewTitle.setText(filmSQLite.getTitle());
-
-        byte[] filmCover = filmSQLite.getImage();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(filmCover, 0, filmCover.length);
-        holder.imageViewCover.setImageBitmap(bitmap);
 
         return row;
     }

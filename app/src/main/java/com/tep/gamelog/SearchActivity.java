@@ -53,6 +53,7 @@ public class SearchActivity extends AppCompatActivity {
         resultText = findViewById(R.id.search_result_text);
         searchButton = findViewById(R.id.search_button);
         addButton = findViewById(R.id.add_button);
+
         final DBUtil dbutil = DBUtil.getInstance(this.getApplicationContext());
         dao = new GameDAO(dbutil.getDb());
         games = dao.lista();
@@ -160,7 +161,7 @@ public class SearchActivity extends AppCompatActivity {
                     for (GameSQLite game:games){
 
                         if(game.getId().equals(gameatual.getId())){
-                            dao.alterar(gameatual);
+                            //dao.alterar(gameatual);
                             contemGame = true;
                             Log.d("ER", "alterar");
                             //Toast.makeText(SearchActivity.this, "Registro alterado com sucesso", Toast.LENGTH_SHORT).show();
