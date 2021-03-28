@@ -7,6 +7,7 @@ import android.content.Context;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class SearchActivity extends AppCompatActivity {
     private TextView resultText;
     private Button searchButton;
     private Button addButton;
+    private Button backButton;
 
     private GameSQLite gameatual = null;
     private GameDAO dao;
@@ -53,6 +55,7 @@ public class SearchActivity extends AppCompatActivity {
         resultText = findViewById(R.id.search_result_text);
         searchButton = findViewById(R.id.search_button);
         addButton = findViewById(R.id.add_button);
+        backButton = findViewById(R.id.back_button);
 
         final DBUtil dbutil = DBUtil.getInstance(this.getApplicationContext());
         dao = new GameDAO(dbutil.getDb());
@@ -175,8 +178,17 @@ public class SearchActivity extends AppCompatActivity {
                     //Toast.makeText(SearchActivity.this, "Registro inserido com sucesso", Toast.LENGTH_SHORT).show();
                 }
 
-                //Intent i = new Intent(FilmInfo.this, PageViewActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(SearchActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(SearchActivity.this, MainActivity.class);
+                startActivity(i);
             }
         });
     }

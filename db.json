@@ -39,6 +39,126 @@
 		"id": "AA08",
 		"title": "DARK SOULS III",
 		"release": 2016
+	},
+	{
+		"id": "AA09",
+		"title": "LIFE IS STRANGE",
+		"release": 2015
+	},
+	{
+		"id": "AA10",
+		"title": "LIFE IS STRANGE 2",
+		"release": 2018
+	},
+	{
+		"id": "AA11",
+		"title": "BATTLEFIELD 4",
+		"release": 2013
+	},
+	{
+		"id": "AA12",
+		"title": "MINECRAFT",
+		"release": 2011
+	},
+	{
+		"id": "AA13",
+		"title": "GTA 5",
+		"release": 2013
+	},
+	{
+		"id": "AA14",
+		"title": "GTA SAN ANDREAS",
+		"release": 2004
+	},
+	{
+		"id": "AA15",
+		"title": "METAL GEAR SOLID V: THE PHANTOM PAIN",
+		"release": 2015
+	},
+	{
+		"id": "AA16",
+		"title": "METAL GEAR SOLID 3: SNAKE EATER",
+		"release": 2004
+	},
+	{
+		"id": "AA17",
+		"title": "METAL GEAR SOLID",
+		"release": 1998
+	},
+	{
+		"id": "AA18",
+		"title": "RESIDENT EVIL 4",
+		"release": 2005
+	},
+	{
+		"id": "AA19",
+		"title": "SILENT HILL",
+		"release": 1999
+	},
+	{
+		"id": "AA20",
+		"title": "FIFA 20",
+		"release": 2019
+	},
+	{
+		"id": "AA21",
+		"title": "PES 20",
+		"release": 2019
+	},
+	{
+		"id": "AA22",
+		"title": "THE LAST OF US",
+		"release": 2013
+	},
+	{
+		"id": "AA23",
+		"title": "GOD OF WAR",
+		"release": 2018
+	},
+	{
+		"id": "AA24",
+		"title": "FORTNITE",
+		"release": 2017
+	},
+	{
+		"id": "AA25",
+		"title": "PUBG",
+		"release": 2016
+	},
+	{
+		"id": "AA26",
+		"title": "CS:GO",
+		"release": 2012
+	},
+	{
+		"id": "AA27",
+		"title": "RAINBOW SIX SIEGE",
+		"release": 2015
+	},
+	{
+		"id": "AA28",
+		"title": "OVERWATCH",
+		"release": 2016
+	},
+	{
+		"id": "AA29",
+		"title": "LIMBO",
+		"release": 2010
+	},
+	{
+		"id": "AA30",
+		"title": "INSIDE",
+		"release": 2016
+	},
+	{
+		"id": "AA31",
+		"title": "THE EVIL WITHIN",
+		"release": 2014
+	},
+	{
+		"id": "AA32",
+		"title": "THE EVIL WITHIN 2",
+		"release": 2017
 	}
 ]
 }

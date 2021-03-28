@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView list;
     private ArrayAdapter<GameSQLite> adapter = null;
-    private int pos = -1;
 
     private GameSQLite gameatual = null;
     private GameDAO dao;
@@ -73,16 +72,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Aqui você pode chamar a intent
-                pos = position;
-
+                gameatual = games.get(position);
                 Log.d("TESTE", "ITEM CLICADO na posicao [ " + position + " ]" + games.get(position));
 
-                gameatual = games.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder .setTitle("Deletar Registro")
+                        .setMessage("Tem certeza que deseja deletar " + gameatual.getTitle() + "?");
+                //AlertDialog dialog = builder.create();
 
-                dao.excluir(gameatual.getId());
-                games = dao.lista();
+                builder.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-                adapter.notifyDataSetChanged();
+                        dao.excluir(gameatual.getId());
+                        games.remove(position);
+                        adapter.notifyDataSetChanged();
+
+                    }
+                });
+                builder.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+                builder.create();
+                builder.show();
             }
         });
 
