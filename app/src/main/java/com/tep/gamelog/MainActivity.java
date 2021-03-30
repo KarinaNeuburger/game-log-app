@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (games != null){
 
-            adapter = new ArrayAdapter<GameSQLite>(this, android.R.layout.simple_list_item_1, games);
+            adapter = new ArrayAdapter<GameSQLite>(this, R.layout.list_row_layout, games);
             list.setAdapter(adapter);
 
         }

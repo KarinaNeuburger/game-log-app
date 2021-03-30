@@ -22,6 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tep.gamelog.model.Game;
 import com.tep.gamelog.service.RetrofitConfig;
 import com.tep.gamelog.service.GameService;
@@ -37,8 +38,6 @@ public class SearchActivity extends AppCompatActivity {
     private EditText searchText;
     private TextView resultText;
     private Button searchButton;
-    private Button addButton;
-    private Button backButton;
 
     private GameSQLite gameatual = null;
     private GameDAO dao;
@@ -54,8 +53,6 @@ public class SearchActivity extends AppCompatActivity {
         searchText = findViewById(R.id.search_text);
         resultText = findViewById(R.id.search_result_text);
         searchButton = findViewById(R.id.search_button);
-        addButton = findViewById(R.id.add_button);
-        backButton = findViewById(R.id.back_button);
 
         final DBUtil dbutil = DBUtil.getInstance(this.getApplicationContext());
         dao = new GameDAO(dbutil.getDb());
@@ -121,8 +118,7 @@ public class SearchActivity extends AppCompatActivity {
                             parametros.putString("titulo", gamelist.get(0).getTitle());
                             parametros.putInt("lançamento", gamelist.get(0).getRelease());
 
-                            resultText.setText("Teste " + parametros +
-                                    "\n" + gamelist.get(0).getId() +
+                            resultText.setText(gamelist.get(0).getId() +
                                     "\n" + gamelist.get(0).getTitle() +
                                     "\n" + gamelist.get(0).getRelease());
 
@@ -145,6 +141,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton addButton = findViewById(R.id.add_button);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,6 +180,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
