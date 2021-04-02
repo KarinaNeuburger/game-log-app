@@ -11,15 +11,20 @@
     tools:context=".SearchActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="100">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="80">
+
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <EditText
                 android:id="@+id/search_text"
@@ -32,25 +37,14 @@
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="16dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="20">
-
-            <Button
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/search_button"
-                android:layout_width="96dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="16dp"
-                android:layout_toLeftOf="@+id/username"
-                android:text="@string/SC" />
-
+                android:layout_gravity="bottom|left"
+                android:layout_margin="@dimen/fab_margin"
+                app:backgroundTint="@color/orange"
+                app:srcCompat="@android:drawable/ic_menu_search"/>
 
         </LinearLayout>
 
@@ -96,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:layout_margin="@dimen/fab_margin"
-            android:background="@color/dark_gray"
+            app:backgroundTint="@color/light_gray"
             app:srcCompat="@drawable/abc_vector_test"/>
 
 
