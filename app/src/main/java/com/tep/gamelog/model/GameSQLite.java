@@ -51,7 +51,7 @@ public class GameSQLite {
 
     @Override
     public String toString(){
-        String str = this.id + "\n" + this.title + "\n" + this.release;
+        String str = this.title + "\n" + this.release;
         return str;
     }
 }

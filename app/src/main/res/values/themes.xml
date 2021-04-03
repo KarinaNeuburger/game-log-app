@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Gamelog" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/light_gray</item>
-        <item name="colorPrimaryVariant">@color/dark_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/chili_pepper</item>
+        <item name="colorPrimaryVariant">@color/chili_pepper</item>
+        <item name="colorOnPrimary">@color/chili_pepper</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/orange</item>
-        <item name="colorSecondaryVariant">@color/orange</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/chili_pepper</item>
+        <item name="colorSecondaryVariant">@color/chili_pepper</item>
+        <item name="colorOnSecondary">@color/navy_blue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

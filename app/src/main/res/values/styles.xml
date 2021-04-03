@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="ListView" parent="@android:style/Widget.ListView">
-        <item name="android:background">@color/gray</item>
+        <item name="android:background">@color/charcoal</item>
         <item name="android:cacheColorHint">@android:color/transparent</item>
         <item name="android:divider">@android:color/transparent</item>
         <item name="android:dividerHeight">10dp</item>
+        <item name="android:state_pressed">@android:color/transparent</item>
+        <item name="android:state_focused">@android:color/transparent</item>
     </style>
 </resources>
 

@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gamelog">
 
-        <activity android:name="com.tep.gamelog.SplashScreen">
+        <activity   android:name="com.tep.gamelog.SplashScreen"
+                    android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

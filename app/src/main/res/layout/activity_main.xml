@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/gray">
+    android:background="@color/charcoal">
 
     <ListView
         style="@style/ListView"
@@ -15,17 +15,16 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="16dp"
-        android:listSelector="@drawable/list_item_selector"/>
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/add_more_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:background="@color/orange"
+        app:backgroundTint="@color/orange"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 
