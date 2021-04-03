@@ -56,10 +56,10 @@ public class SearchActivity extends AppCompatActivity {
         final DBUtil dbutil = DBUtil.getInstance(this.getApplicationContext()); // Cria instância do banco de dados
         dao = new GameDAO(dbutil.getDb()); // Atribui os métodos disponíveis na classe GameDAO para manipulação do banco de dados
         games = dao.lista(); // Alimenta a lista com os dados já existentes no banco de dados
-        // Cria uma SearchView para
+        // Cria um listener para receber os inputs do usuário
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
+            public boolean onQueryTextSubmit(String query) { // Envia a query ao clicar no botão enviar " > "
                 queryText = query.toUpperCase(); // Converte o texto da query para uppercase devido aos dados da API estarem em uppercase
                 // Cria uma janela de diálogo de pesquisa enquanto o app busca dos dados da API
                 AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
@@ -102,29 +102,30 @@ public class SearchActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                games = dao.lista();
-                contemGame = false;
-                if(gameatual == null){ gameatual = new GameSQLite(); }
+                games = dao.lista(); // A lista recebe os dados do banco
+                contemGame = false; // Flag para fazer a comparação se o registro já existe no banco de dados
+                if(gameatual == null){ gameatual = new GameSQLite(); } // Cria um objeto da classe GameSQLite
+                // Usa os métodos set para alimentar o objeto com os dados retornados pela busca na API
                 gameatual.setId(gamelist.get(0).getId());
                 gameatual.setTitle(gamelist.get(0).getTitle());
                 gameatual.setRelease("" + gamelist.get(0).getRelease());
-                if(games != null){
-                    for (GameSQLite game:games){
-                        if(game.getId().equals(gameatual.getId())){
-                            contemGame = true;
+                if(games != null){ // Varifica se a lista de games não está vazia
+                    for (GameSQLite game:games){ // Corre a lista atual
+                        if(game.getId().equals(gameatual.getId())){ // Verifica se o ID recebido já existe no banco de dados
+                            contemGame = true; // Seta a flag para true em caso do registro já existir
                             toast.makeText(SearchActivity.this, "esse game já está logado XD ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
-                if(gameatual.getId() != "" && contemGame == false) {
-                    dao.inserir(gameatual);
+                if(gameatual.getId() != "" && contemGame == false) { // Verifica se o campo ID é difetente de nulo e se o flag contemGame é false
+                    dao.inserir(gameatual); // Insere registro no banco de dados
                     toast.makeText(SearchActivity.this, "gamelog level up!!!! :D ", Toast.LENGTH_SHORT).show();
                 }
-                Intent i = new Intent(SearchActivity.this, MainActivity.class);
+                Intent i = new Intent(SearchActivity.this, MainActivity.class); // Retorna para a MainActivity após inserir
                 startActivity(i);
             }
         });
-
+        // Botão para retornar a MainActivity
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

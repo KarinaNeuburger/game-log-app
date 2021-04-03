@@ -7,12 +7,10 @@ import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import com.tep.gamelog.model.Game;
 import com.tep.gamelog.model.GameDAO;
 import com.tep.gamelog.model.GameSQLite;
 import com.tep.gamelog.util.DBUtil;
@@ -28,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private GameSQLite gameatual = null;
     private GameDAO dao;
     private List<GameSQLite> games;
-    private boolean contemGame = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
