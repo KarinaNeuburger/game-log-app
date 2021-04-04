@@ -2,11 +2,9 @@ package com.tep.gamelog.util;
 
 import java.util.List;
 
-
+// Interface para implemetação de um DAO (Objeto de acesso a dados - Data Access Object)
 public interface GenericDAO<O> {
     long inserir(O objeto);
-    int alterar(O objeto);
     int excluir(String id);
-    //O buscar(int id);
     List<O> lista();
 }

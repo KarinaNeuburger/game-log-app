@@ -1,5 +1,6 @@
 package com.tep.gamelog;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,7 +66,6 @@ public class SearchActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
                 builder.setCancelable(false); // Obriga o usuário aguardar o final da execução da busca
                 builder.setView(R.layout.dialog_loading); // Seta o layout customizado da janela
-                builder.setTitle("gamelog API v 1.0");
                 AlertDialog dialog = builder.create();
                 dialog.show();
                 // Inicio do processo de busca de dados na API com Retrofit
@@ -134,4 +134,11 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
+    // Reescreve a ação do botão back nativo do android
+    @Override
+    public void onBackPressed(){
+        Intent i = new Intent(SearchActivity.this, MainActivity.class);
+        startActivity(i);
+    }
 }
+

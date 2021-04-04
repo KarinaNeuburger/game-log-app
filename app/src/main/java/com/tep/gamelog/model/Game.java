@@ -1,5 +1,5 @@
 package com.tep.gamelog.model;
-
+// Cria a classe game que é usada no retorno da busca do Retrofit
 public class Game {
 
     private String id;

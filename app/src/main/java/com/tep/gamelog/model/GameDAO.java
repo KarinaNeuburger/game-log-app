@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tep.gamelog.util.GenericDAO;
-
+// Classe que oferece os métodos para manipulação do banco de dados
 public class GameDAO implements GenericDAO<GameSQLite> {
     private SQLiteDatabase db;
 
@@ -36,22 +36,6 @@ public class GameDAO implements GenericDAO<GameSQLite> {
     }
 
     @Override
-    public int alterar(GameSQLite objeto) {
-
-        ContentValues values = new ContentValues();
-
-        values.put("id", objeto.getId());
-        values.put("title", objeto.getTitle());
-        values.put("description", objeto.getRelease());
-
-        String[] whereArgs = {String.valueOf(objeto.getId())};
-
-        int count = db.update("game", values, "id=?", whereArgs);
-
-        return count;
-    }
-
-    @Override
     public int excluir(String id) {
 
         int count = db.delete("game", "id=?", new String[]{String.valueOf(id)});
@@ -59,44 +43,27 @@ public class GameDAO implements GenericDAO<GameSQLite> {
         return count;
     }
 
-    /**@Override
-     *public FilmSQLite buscar(int id) {
-     *
-     *
-     *   return null;
-     *}
-     **/
-
     @Override
     public List<GameSQLite> lista() {
 
         List<GameSQLite> games = null;
 
         try{
-
             Cursor c = db.query("game", new String[]{"id", "title", "release"}, null, null,null,
                     null, null);
-
             if (c.moveToFirst()){
-
                 games = new ArrayList<GameSQLite>();
-
                 do{
                     GameSQLite game = new GameSQLite();
-
                     game.setId(c.getString(0));
                     game.setTitle(c.getString(1));
                     game.setRelease(c.getString(2));
-
                     games.add(game);
-
                 }while(c.moveToNext());
             }
-
         }catch(Exception e){
             return null;
         }
-
         return games;
     }
 }

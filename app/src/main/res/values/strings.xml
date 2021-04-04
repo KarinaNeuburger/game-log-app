@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos usados no projeto -->
 <resources>
     <string name="app_name">gamelog</string>
-    <string name="action_settings">Settings</string>
     <string name="udesc_tep_2021">udesc tep 2021</string>
-    <string name="todo">gamelog logo</string>
+    <string name="desc">gamelog logo</string>
 </resources>

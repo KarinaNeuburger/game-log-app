@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Seta o estilo para botão para adicionar habilitado e desabilitado -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true" android:color="@color/orange" />
     <item android:state_enabled="false" android:color="@color/blue_gray" />
