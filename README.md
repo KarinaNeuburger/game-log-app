@@ -2,7 +2,7 @@
 gamelog app v 1.0
 ===================================
 
-This app is a project of a app for logging the games you played.
+This is a project of an app for logging the games you played.
 
 Screenshots
 -------------
