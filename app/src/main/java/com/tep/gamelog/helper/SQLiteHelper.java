@@ -8,7 +8,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private String[] scriptSQLCreate;
     private String scriptSQLDelete;
 
-    // Cria uma instância de SQLiteHelper
+    // Cria uma instância de SQLiteHelper de acordo com as especificações da classe DBUtil
     public SQLiteHelper(Context context, String nomeBanco, int versaoBanco, String[] scriptSQLCreate,
                         String scriptSQLDelete){
         super(context, nomeBanco, null, versaoBanco);

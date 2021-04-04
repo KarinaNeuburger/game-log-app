@@ -16,8 +16,8 @@
         <activity   android:name="com.tep.gamelog.SplashScreen"
                     android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action 	android:name="android.intent.action.MAIN" />
+                <category 	android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>>
 
@@ -26,10 +26,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Gamelog.NoActionBar">
         </activity>
+
         <activity
             android:name="com.tep.gamelog.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Gamelog.NoActionBar">
         </activity>
+
     </application>
+    
 </manifest>

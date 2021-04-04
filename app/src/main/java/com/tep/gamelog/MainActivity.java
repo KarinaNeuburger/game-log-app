@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 // opções "SIM" para excluir e "NÃO" para cancelar a operação
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 LayoutInflater inflater = MainActivity.this.getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.dialog_delete, null);
+                View dialogView = inflater.inflate(R.layout.dialog_delete, null); // Atribui layout customizado
                 builder.setView(dialogView);
                 TextView dialogText = (TextView) dialogView.findViewById(R.id.dialogText);
                 dialogText.setText("Tem certeza que deseja deletar " + gameatual.getTitle() + "?");
@@ -83,8 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 negativeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // Ao clicar na opção "NÃO" não tem nenhuma ação para ser feita, apenas fecha a caixa de diálogo
-                        dialog.dismiss();
+                        dialog.dismiss();// Ao clicar na opção "NÃO" apenas fecha a caixa de diálogo
                     }
                 });
             }

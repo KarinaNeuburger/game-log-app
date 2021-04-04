@@ -82,7 +82,7 @@ public class SearchActivity extends AppCompatActivity {
                             resultText.setText(gamelist.get(0).getTitle() + "\n" + gamelist.get(0).getRelease()); // Imprime na tela os dados do retorno
                         }else{
                             resultText.setText("Nenhum game encontrado! :( "); // Imprime na tela mensagem de retorno vazio
-                            // não encontrou nenhum dada correspondente com a query enviada
+                            // não encontrou nenhum dado correspondente com a query enviada
                         }
                     }
                     @Override // Realizou a busca e não obteve retorno
@@ -95,6 +95,7 @@ public class SearchActivity extends AppCompatActivity {
             }
             @Override
             public boolean onQueryTextChange(String newText) {
+                //Metodo para captar query a cada modificação feita pelo usuário, nesse projeto não foi utilizado
                 return false;
             }
         });
@@ -109,7 +110,7 @@ public class SearchActivity extends AppCompatActivity {
                 gameatual.setId(gamelist.get(0).getId());
                 gameatual.setTitle(gamelist.get(0).getTitle());
                 gameatual.setRelease("" + gamelist.get(0).getRelease());
-                if(games != null){ // Varifica se a lista de games não está vazia
+                if(games != null){ // Verifica se a lista de games não está vazia
                     for (GameSQLite game:games){ // Corre a lista atual
                         if(game.getId().equals(gameatual.getId())){ // Verifica se o ID recebido já existe no banco de dados
                             contemGame = true; // Seta a flag para true em caso do registro já existir
@@ -121,7 +122,7 @@ public class SearchActivity extends AppCompatActivity {
                     dao.inserir(gameatual); // Insere registro no banco de dados
                     toast.makeText(SearchActivity.this, "gamelog level up!!!! :D ", Toast.LENGTH_SHORT).show();
                 }
-                Intent i = new Intent(SearchActivity.this, MainActivity.class); // Retorna para a MainActivity após inserir
+                Intent i = new Intent(SearchActivity.this, MainActivity.class); // Retorna para a MainActivity após inserir registro
                 startActivity(i);
             }
         });

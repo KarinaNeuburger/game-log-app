@@ -22,7 +22,7 @@ public class DBUtil {
 
     public DBUtil(){
     }
-    // Cria a instância de acordo com os parâmetrod enviados
+    // Cria a instância de acordo com os parâmetros enviados
     public static DBUtil getInstance(Context ctx){
         if (instance == null){
             dbHelper = new SQLiteHelper(ctx, nomeBanco, versaoBanco, createSQL, deleteSQL);
